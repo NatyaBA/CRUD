@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./crud.css">
+    <title>CRUD</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Country</th>
+            <th>Age</th>
+        </tr>
+        <tbody id="user">
+        </tbody>
+    </table>
+    <p id="count"></p>
+    <div id="modalPlus" class="modalPlus">
+        <div class="modal_content">
+            <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">              
+            <input class="close_modal_window" value="×" type="button" onclick="closeModal()">
+            <p id="counter"></p>
+            <div class="text" id="text">Please, fill in all the fields</div>
+            <table class="modal">
+                <tr>
+                    <td>ID</td>
+                    <td><input type="text" id="id" pattern="^[0-9]+$"></td>
+                </tr>
+                <tr>
+                    <td>User Name</td>
+                    <td><input type="text" id="name" pattern="^[a-zA-Z]+$"></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td><input type="text" id="country" pattern="^[a-zA-Z]+$"></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="text" id="age" pattern="^[0-9]+$"></td>
+                </tr>
+            </table>
+            <input type="submit" class="createButton" value="create"  id="add-name">
+        </form>
+        </div>
+    </div>
+  <input type="button" value="+" class="plus" onclick="modalPlus()">
+
+  <div id="modalEdit" class="modalPlus">
+    <div class="modal_content">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+        <input class="close_modal_window" value="×" type="button" onclick="closeModalEdit()">
+        <p id="counter"></p>
+        <div class="text" id="textEdit">Please, fill in all the fields</div>
+        <table class="modal">
+            <tr>
+                <td>ID</td>
+                <td><input type="text" id='edit-id' pattern="^[0-9]+$"></td>
+            </tr>
+            <tr>
+                <td>User Name</td>
+                <td><input type="text" id='edit-name' pattern="^[a-zA-Z]+$"></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><input type="text" id='edit-country' pattern="^[a-zA-Z]+$"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="text" id='edit-age' pattern="^[0-9]+$"></td>
+            </tr>
+        </table>
+        <input type="submit" class="createButton" value="edit">
+    </form>
+    </div>
+</div>
+
+
+</body>
+<script src="crud.js"></script>
+</html>
